@@ -393,8 +393,7 @@ class FLauncherWindow(QMainWindow):
             if not os.path.exists(modpack_path):
                 os.makedirs(modpack_path)
                 if is_string_filled(modpack_title):
-                    with open(f"{modpack_path}/{TITLE_FILE_NAME}", 'w') as title_name_config: title_name_config.write(
-                        modpack_title)
+                    config_manager.mc_config_set(modpack_path, {"titlename": modpack_title})
                 with open(f"{modpack_path}/{LAUNCHER_FILE_NAME}", 'w') as launcher_file:
                     launcher_file.write("")
             else:
