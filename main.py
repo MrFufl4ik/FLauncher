@@ -19,6 +19,7 @@ from window_settings import Ui_Form as Ui_Settings_Form
 from window_log import Ui_Form as Ui_Log_Form
 from window_download import Ui_Form as Ui_Download_Form
 from consts import *
+from ftplib import FTP
 
 current_directory = os.getcwd()
 
@@ -97,6 +98,7 @@ class FLauncherWindow(QMainWindow):
     def __init__(self):
         super(FLauncherWindow, self).__init__()
         self.modpacks = None
+        self.ftp = None
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.init_main_window()
@@ -164,13 +166,20 @@ class FLauncherWindow(QMainWindow):
                 defaultButton=QMessageBox.Ok,
             )
 
-    def init_download_window(self):
+    def init_download_window(self, ftp: FTP):
         self.download_window = QtWidgets.QDialog()
         self.download_ui_window = Ui_Download_Form()
         self.download_ui_window.setupUi(self.download_window)
 
         self.download_window.show()
         self.download_window.setWindowTitle(f"{WINDOW_NAME} | Установка модпаков")
+
+        input_validator = QRegularExpressionValidator(QRegularExpression("[A-za-z0-9]+"),
+                                                      self.download_ui_window.installLineEdit)
+        self.download_ui_window.installLineEdit.setValidator(input_validator)
+
+        self.ftp = ftp
+        self.download_ui_window.installPushButton.clicked.connect(self.install_modpack)
 
     def update_or_install_modpack(self):
         modpack_at_id = get_current_index_lw(self.ui.list_view)
@@ -215,9 +224,7 @@ class FLauncherWindow(QMainWindow):
                                 defaultButton=QMessageBox.Ok,
                             )
                     else:
-                        try:
-                            window = self.settings_ui_window
-                        except: self.init_download_window()
+                        self.init_download_window(ftp)
                 else:
                     QMessageBox.critical(
                         self,
@@ -230,6 +237,41 @@ class FLauncherWindow(QMainWindow):
                 print("Конфиг не заполнен!")
         else:
             print("Конфиг не создан...")
+
+    def install_modpack(self):
+        modpack_name = self.download_ui_window.installLineEdit.text()
+
+        if is_string_filled(modpack_name):
+            update_pkg = update_manager.check_update(modpack_name, self.ftp)
+            if update_pkg is not None:
+                update_status = update_manager.install_update(modpack_name, update_pkg, self.ftp)
+                if update_status == 0:
+                    update_manager.post_update(modpack_name)
+                    print("Модпак установлен")
+                    QMessageBox.information(
+                        self,
+                        f"{WINDOW_NAME} | Оповещение!",
+                        f"Модпак установлен: {modpack_name}!",
+                        buttons=QMessageBox.Ok,
+                        defaultButton=QMessageBox.Ok,
+                    )
+            else:
+                print("Такой модпак не найден на сервере!")
+                QMessageBox.information(
+                    self,
+                    f"{WINDOW_NAME} | Оповещение!",
+                    f"Такой модпак не найден на сервере!\nделать больше нечего...",
+                    buttons=QMessageBox.Ok,
+                    defaultButton=QMessageBox.Ok,
+                )
+        else:
+            QMessageBox.critical(
+                self,
+                f"{WINDOW_NAME} | Ошибка!",
+                f"Заполните поле с названием",
+                buttons=QMessageBox.Ok,
+                defaultButton=QMessageBox.Ok,
+            )
 
     def read_log(self):
         with open(consts.LOG_FILE_NAME) as f:

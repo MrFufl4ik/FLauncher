@@ -28,12 +28,12 @@ class Ui_Form(object):
         icon = QIcon()
         icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
-        self.lineEdit = QLineEdit(Form)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(10, 10, 171, 21))
-        self.pushButton = QPushButton(Form)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(10, 40, 171, 51))
+        self.installLineEdit = QLineEdit(Form)
+        self.installLineEdit.setObjectName(u"installLineEdit")
+        self.installLineEdit.setGeometry(QRect(10, 10, 171, 21))
+        self.installPushButton = QPushButton(Form)
+        self.installPushButton.setObjectName(u"installPushButton")
+        self.installPushButton.setGeometry(QRect(10, 40, 171, 51))
 
         self.retranslateUi(Form)
 
@@ -42,7 +42,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"\u041a\u0430\u043a\u043e\u0439 \u043c\u043e\u0434\u043f\u0430\u043a \u043f\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c?", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c", None))
+        self.installLineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"\u041a\u0430\u043a\u043e\u0439 \u043c\u043e\u0434\u043f\u0430\u043a \u043f\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c?", None))
+        self.installPushButton.setText(QCoreApplication.translate("Form", u"\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c", None))
     # retranslateUi
 

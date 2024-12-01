@@ -21,6 +21,7 @@ LOADERS = [
     "forge",
     "fabric",
 ]
+
 DEFAULT_CONFIG = {
     "username"  : "Player",
     "loader"    : "fabric",
