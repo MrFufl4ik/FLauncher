@@ -36,12 +36,12 @@ File `launcher` important for FLauncher defined this modpack, if you want a self
 Config file, used a `json` format. Settings has a 4 required input field: `username`, `loader`, `version`, `java_args`. If config or one of them is empty - FLauncher use a default field value.
 
 Modpack config field's list:
- * `titlename`: name visible in FLauncher modpacks list. Type of data: `string`.
- * `username`: player name, used in MC. Type of data: `string`.
- * `loader`: MC modloader, used `portablemc`, to download and run MC. Type of data: `string`.
- * `version`: MC version, used `portablemc`, to download and run MC. Type of data: `string`.
- * `java_args`: java arguments used, to run MC. Type of data: `string`.
- * `update_version`: integer number equal version of modpack, used `ftp` update system. Type of data: `int`.
+ * `titlename`: string filed equal name visible in FLauncher modpacks list.
+ * `username`: string field equal player name, used in MC.
+ * `loader`: string field equal player MC modloader, used `portablemc`, to download and run MC.
+ * `version`: string field equal MC version, used `portablemc`, to download and run MC.
+ * `java_args`: string field equal java arguments used, to run MC.
+ * `update_version`: integer number equal version of modpack, used `ftp` update system.
 
 ## How to download?
 If you are using `windows`, you can used [FLauncherInstaller](https://github.com/MrFufl4ik/FLauncherInstaller)(More info there).
