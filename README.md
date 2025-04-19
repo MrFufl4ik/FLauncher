@@ -1,6 +1,6 @@
 # FLauncher
 
-## Fast About.
+## Fast About
 FLauncher - MC launcher, which is an add-on to [PortableMC](https://github.com/mindstorm38/portablemc), which has the ability to work with a remote `FTP` server for easy download and updating of the MC modpack.
 
 ## Compability
