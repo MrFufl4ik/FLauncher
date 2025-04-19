@@ -41,4 +41,13 @@ Modpack config field's list:
  * `loader`: MC modloader, used `portablemc`, to download and run MC. Type of data: `string`.
  * `version`: MC version, used `portablemc`, to download and run MC. Type of data: `string`.
  * `java_args`: java arguments used, to run MC. Type of data: `string`.
- * `update_version`: integer number equal version of modpack, used `ftp` update system. `Type of data: `int`.
+ * `update_version`: integer number equal version of modpack, used `ftp` update system. Type of data: `int`.
+
+## Loader
+in devolpment
+
+## Runner
+in devolpment
+
+## FLauncher & FLauncherInstalled state
+FLauncher & FLauncherInstaller they are still being developed and are in active testing.
