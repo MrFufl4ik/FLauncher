@@ -51,12 +51,13 @@ def run_mc(config: dict, client_dir: str) -> bool:
                         print(f"Мод: {mod}, статус: {status}")
                         if not status:
                             os.remove(f"{client_dir}/mods/{mod}")
-
         mc_run_cmd = f"portablemc --main-dir {client_dir} --work-dir {client_dir} start \"{new_config.get("java_args")}\" {new_config.get("loader")}:{new_config.get("version")} -u {new_config.get("username")}"
+
+        print(mc_run_cmd)
         try:
             clear_mc_log()
         except:
-            print("Ошибка при записи логов! Такое может быть при одновременно запуске функции!")
+            print("Ошибка при записи логов! Такое может быть при одновременном запуске функции!")
         thread = threading.Thread(target=run_process_log, args=(mc_run_cmd,))
         thread.start()
         return True
