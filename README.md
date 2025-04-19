@@ -13,7 +13,7 @@ Flauncher stored in root of disk. The disk where the FLauncher will be stored is
 ### Example launcher path for windows
  `"C:/FLauncher"`
 ### Example launcher path for linux
- `"/home/mrfufl4ik/FLauncher"`
+ `/home/mrfufl4ik/FLauncher`
 
 ## Modpack managment
 1. `Create` a modpack so easy. Run a `create` menu. To create a modpack, you specify an `id` and a text name (optional). This so easy :0
@@ -43,11 +43,16 @@ Modpack config field's list:
  * `java_args`: java arguments used, to run MC. Type of data: `string`.
  * `update_version`: integer number equal version of modpack, used `ftp` update system. Type of data: `int`.
 
-## Loader
-in devolpment
+## How to download?
+If you are using `windows`, you can used [FLauncherInstaller](https://github.com/MrFufl4ik/FLauncherInstaller)(More info there).
+
+If you are using `linux` you have to follow the steps:
+ 1. Install `git` and `python`: `pacman -S git python` (example in Arch Linux based system).
+ 2. Clone repository: `git clone https://github.com/MrFufl4ik/FLauncher`.
+ 3. Install requirements `pip install -r requirements.txt`.
 
 ## Runner
 in devolpment
 
-## FLauncher & FLauncherInstalled state
+## FLauncher & FLauncherInstaller state
 FLauncher & FLauncherInstaller they are still being developed and are in active testing.
