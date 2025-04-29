@@ -1,10 +1,6 @@
 WINDOW_NAME = "FLauncher"
 LAUNCHER_FILE_NAME = "launcher"
 
-UPDATE_DOMAIN = "flauncher.ddns.net"
-UPDATE_PORT = 21
-UPDATE_USER = "flauncher_update_user"
-UPDATE_PASSWORD = "D4x1=9&~mu7]C@)d.qD"
 UPDATE_ARCHIVE_FILE_NAME = "update.7z"
 
 MINECRAFT_INFO_FOLDER = "minecraftinfo"

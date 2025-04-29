@@ -118,7 +118,7 @@ def check_update(modpack_id: str, ftp: FTP) -> str:
 
 
 def main():
-    ftp = create_ftp(consts.UPDATE_DOMAIN, consts.UPDATE_PORT, consts.UPDATE_USER, consts.UPDATE_PASSWORD)
+    ftp = create_ftp("flauncher.ddns.net", 21, "flauncher_update_user", "D4x1=9&~mu7]C@)d.qD")
     if ftp is not None:
         update_pkg = check_update("prikol", ftp)
         if update_pkg is not None:
