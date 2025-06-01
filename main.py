@@ -144,7 +144,7 @@ class FLauncherWindow(QMainWindow):
         self.create_window.show()
         self.create_window.setWindowTitle(f"{WINDOW_NAME} | Создание модпака")
 
-        input_validator = QRegularExpressionValidator(QRegularExpression("[A-za-z0-9]+"),
+        input_validator = QRegularExpressionValidator(QRegularExpression("[A-Za-z0-9-]+"),
                                                       self.create_ui_window.lineEdit_id)
         self.create_ui_window.lineEdit_id.setValidator(input_validator)
 
@@ -183,7 +183,7 @@ class FLauncherWindow(QMainWindow):
         self.download_window.show()
         self.download_window.setWindowTitle(f"{WINDOW_NAME} | Установка модпаков")
 
-        input_validator = QRegularExpressionValidator(QRegularExpression("[A-za-z0-9]+"),
+        input_validator = QRegularExpressionValidator(QRegularExpression("[A-Za-z0-9-]+"),
                                                       self.download_ui_window.installLineEdit)
         self.download_ui_window.installLineEdit.setValidator(input_validator)
 
