@@ -1,3 +1,4 @@
+import re
 import sys
 import consts
 import os
@@ -22,10 +23,14 @@ def create_ftp(ip: str, port: int, user: str, passwd: str) -> FTP:
         print("Не удалось подключится к ФТП серверу!")
     return None
 
+def natural_sort_key(s):
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split('([0-9]+)', s)]
 
 def get_files(server_path: str, ftp: FTP) -> list:
     try:
         files = ftp.nlst(server_path)
+        files.sort(natural_sort_key)
         return files
     except Exception as E:
         print(E)
