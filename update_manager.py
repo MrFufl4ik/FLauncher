@@ -30,7 +30,7 @@ def natural_sort_key(s):
 def get_files(server_path: str, ftp: FTP) -> list:
     try:
         files = ftp.nlst(server_path)
-        files.sort(natural_sort_key)
+        files.sort(key=natural_sort_key)
         return files
     except Exception as E:
         print(E)
