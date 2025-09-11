@@ -25,7 +25,7 @@ class Ui_Form(object):
         Form.setMinimumSize(QSize(750, 450))
         Form.setMaximumSize(QSize(750, 450))
         icon = QIcon()
-        icon.addFile(u"../assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
         self.logTextEdit = QTextEdit(Form)
         self.logTextEdit.setObjectName(u"logTextEdit")

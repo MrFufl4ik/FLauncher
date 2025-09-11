@@ -26,7 +26,7 @@ class Ui_Form(object):
         Form.setMinimumSize(QSize(305, 210))
         Form.setMaximumSize(QSize(305, 210))
         icon = QIcon()
-        icon.addFile(u"../assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
         self.comboBoxLoader = QComboBox(Form)
         self.comboBoxLoader.setObjectName(u"comboBoxLoader")

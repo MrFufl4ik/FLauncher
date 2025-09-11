@@ -26,7 +26,7 @@ class Ui_Form(object):
         Form.setMinimumSize(QSize(300, 100))
         Form.setMaximumSize(QSize(300, 100))
         icon = QIcon()
-        icon.addFile(u"../assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
         self.installLineEdit = QLineEdit(Form)
         self.installLineEdit.setObjectName(u"installLineEdit")
