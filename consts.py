@@ -27,9 +27,6 @@ DEFAULT_CONFIG = {
 MINECRAFT_VERSIONS_FILE_FABRIC = "versions_fabric.mcc"
 MINECRAFT_VERSIONS_FILE_FORGE = "versions_forge.mcc"
 
-DEFAULT_BANNER_FILE = "./assets/emptybanner.png"
-BANNER_FILE_NAME = "banner.png"
-
 L_PROCESS_MC_NAME = "portablemc"
 PROCESS_MC_NAME = "portablemc.exe"
 JAVAW_MC_NAME = "javaw.exe"

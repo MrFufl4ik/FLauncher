@@ -32,11 +32,24 @@
   <widget class="QTextEdit" name="logTextEdit">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>731</width>
-     <height>431</height>
+     <x>0</x>
+     <y>0</y>
+     <width>751</width>
+     <height>451</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+	color: white;
+	background: black;
+	padding: 8px 16px;
+}</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
    </property>
   </widget>
  </widget>

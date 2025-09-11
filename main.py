@@ -8,7 +8,7 @@ import system_manager
 import config_manager
 import update_manager
 
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QListWidget, QLabel
 from PySide6.QtCore import QRegularExpression
@@ -55,9 +55,9 @@ def get_title_name(modpack_name: str) -> str:
     if config is not None:
         modpack_title_name = config.get("titlename")
         if modpack_title_name is not None:
-            return modpack_title_name
+            return modpack_title_name.lower()
 
-    return modpack_name
+    return modpack_name.lower()
 
 
 def get_title_name_none(modpack_name: str) -> Any | None:
@@ -75,14 +75,6 @@ def get_current_index_lw(lw: QListWidget) -> int | None:
     if lw.currentItem():
         return lw.currentRow()
     return None
-
-
-def set_banner(label: QLabel, path: str):
-    label.setPixmap(QPixmap(path))
-
-
-def clear_banner(label: QLabel):
-    label.setPixmap(QPixmap(DEFAULT_BANNER_FILE))
 
 
 def is_string_filled(s: str):
@@ -127,7 +119,7 @@ class FLauncherWindow(QMainWindow):
         self.modpacks_update()
 
     def init_log_window(self):
-        self.log_window = QtWidgets.QDialog()
+        self.log_window = QtWidgets.QDialog(self)
         self.log_ui_window = Ui_Log_Form()
         self.log_ui_window.setupUi(self.log_window)
 
@@ -137,7 +129,9 @@ class FLauncherWindow(QMainWindow):
         self.read_log()
 
     def init_create_window(self):
-        self.create_window = QtWidgets.QDialog()
+        self.create_window = QtWidgets.QDialog(self)
+        self.create_window.setWindowModality(QtCore.Qt.ApplicationModal)  # Важно!
+        self.create_window.setModal(True)
         self.create_ui_window = Ui_Create_Form()
         self.create_ui_window.setupUi(self.create_window)
 
@@ -152,13 +146,15 @@ class FLauncherWindow(QMainWindow):
 
     def init_settings_window(self):
         if get_current_index_lw(self.ui.list_view) is not None:
-            self.settings_window = QtWidgets.QDialog()
+            self.settings_window = QtWidgets.QDialog(self)
+            self.settings_window.setWindowModality(QtCore.Qt.ApplicationModal)  # Важно!
+            self.settings_window.setModal(True)
             self.settings_ui_window = Ui_Settings_Form()
             self.settings_ui_window.setupUi(self.settings_window)
 
             self.settings_window.show()
             modpack_title_name = get_title_name(self.modpacks[get_current_index_lw(self.ui.list_view)])
-            self.settings_window.setWindowTitle(f"{WINDOW_NAME} | {modpack_title_name}")
+            self.settings_window.setWindowTitle(f"{WINDOW_NAME} | Настройки")
 
             self.settings_ui_window.comboBoxLoader.currentTextChanged.connect(self.update_version_loader)
 
@@ -176,7 +172,9 @@ class FLauncherWindow(QMainWindow):
             )
 
     def init_download_window(self, ftp: FTP):
-        self.download_window = QtWidgets.QDialog()
+        self.download_window = QtWidgets.QDialog(self)
+        self.download_window.setWindowModality(QtCore.Qt.ApplicationModal)  # Важно!
+        self.download_window.setModal(True)
         self.download_ui_window = Ui_Download_Form()
         self.download_ui_window.setupUi(self.download_window)
 
@@ -313,7 +311,6 @@ class FLauncherWindow(QMainWindow):
         modpack_at_id = get_current_index_lw(self.ui.list_view)
         modpack_name = self.modpacks[modpack_at_id]
         modpack_path = f"{current_directory}/{MODPACKS_FOLDER_NAME}/{modpack_name}"
-        modpack_banner_path = f"{modpack_path}/{BANNER_FILE_NAME}"
 
         config = config_manager.mc_config_get(modpack_path)
         if config is not None:
@@ -422,18 +419,9 @@ class FLauncherWindow(QMainWindow):
         self.ui.list_view.clear()
         self.modpacks = get_modpacks()
         for modpack in self.modpacks: self.ui.list_view.addItem(get_title_name(modpack))
-        clear_banner(self.ui.top_image)
 
     def update_lw(self):
         index = get_current_index_lw(self.ui.list_view)
-        if index is not None:
-            banner_file = f"{current_directory}/{MODPACKS_FOLDER_NAME}/{self.modpacks[index]}/banner.png"
-            if os.path.exists(banner_file):
-                set_banner(self.ui.top_image, banner_file)
-            else:
-                clear_banner(self.ui.top_image)
-        else:
-            clear_banner(self.ui.top_image)
 
     def run_explorer(self):
         index = get_current_index_lw(self.ui.list_view)

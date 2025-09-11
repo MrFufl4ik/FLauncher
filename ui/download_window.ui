@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>195</width>
-    <height>105</height>
+    <width>300</width>
+    <height>100</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>195</width>
-    <height>105</height>
+    <width>300</width>
+    <height>100</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>195</width>
-    <height>105</height>
+    <width>300</width>
+    <height>100</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -34,25 +34,76 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>171</width>
-     <height>21</height>
+     <width>281</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: black;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 6px;
+    selection-background-color: #444;
+    selection-color: white;
+}
+
+QLineEdit:disabled {
+    background-color: #333;
+    color: #999;
+    border: 1px solid #444;
+}</string>
+   </property>
    <property name="placeholderText">
-    <string>Какой модпак поставить?</string>
+    <string>Введите ID модпака...</string>
    </property>
   </widget>
   <widget class="QPushButton" name="installPushButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>40</y>
-     <width>171</width>
-     <height>51</height>
+     <y>50</y>
+     <width>281</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: black;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 8px 16px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #222;
+    border: 1px solid #444;
+}
+
+QPushButton:pressed {
+    background-color: #111;
+}
+
+QPushButton:disabled {
+    background-color: #333;
+    color: #999;
+}</string>
+   </property>
    <property name="text">
-    <string>Установить</string>
+    <string>установить</string>
    </property>
   </widget>
  </widget>

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'log_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -25,11 +25,18 @@ class Ui_Form(object):
         Form.setMinimumSize(QSize(750, 450))
         Form.setMaximumSize(QSize(750, 450))
         icon = QIcon()
-        icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"../assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
         self.logTextEdit = QTextEdit(Form)
         self.logTextEdit.setObjectName(u"logTextEdit")
-        self.logTextEdit.setGeometry(QRect(10, 10, 731, 431))
+        self.logTextEdit.setGeometry(QRect(0, 0, 751, 451))
+        self.logTextEdit.setStyleSheet(u"QTextEdit {\n"
+"	color: white;\n"
+"	background: black;\n"
+"	padding: 8px 16px;\n"
+"}")
+        self.logTextEdit.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.logTextEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
 
         self.retranslateUi(Form)
 

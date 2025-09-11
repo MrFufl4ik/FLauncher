@@ -5,7 +5,7 @@ import os
 os_name = os.name
 
 WIN_FILE_MANAGER = "explorer.exe"
-UNIX_FILE_MANAGER = "thunar"
+UNIX_FILE_MANAGER = "dolphin"
 
 
 def windows_patch_path(original_path):
