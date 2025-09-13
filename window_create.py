@@ -28,6 +28,9 @@ class Ui_Form(object):
         icon = QIcon()
         icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
+        Form.setStyleSheet(u"QWidget{\n"
+"	background-color: rgb(255,255,255)\n"
+"}")
         self.pushButton_create = QPushButton(Form)
         self.pushButton_create.setObjectName(u"pushButton_create")
         self.pushButton_create.setGeometry(QRect(10, 90, 371, 31))

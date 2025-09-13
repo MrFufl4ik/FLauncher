@@ -29,6 +29,11 @@
    <iconset>
     <normaloff>assets/frog_launcher_icon.png</normaloff>assets/frog_launcher_icon.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	background-color: rgb(255,255,255)
+}</string>
+  </property>
   <widget class="QPushButton" name="pushButton_create">
    <property name="geometry">
     <rect>

@@ -28,6 +28,9 @@ class Ui_Form(object):
         icon = QIcon()
         icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
+        Form.setStyleSheet(u"QWidget{\n"
+"	background-color: rgb(255,255,255)\n"
+"}")
         self.comboBoxLoader = QComboBox(Form)
         self.comboBoxLoader.setObjectName(u"comboBoxLoader")
         self.comboBoxLoader.setGeometry(QRect(10, 130, 281, 31))

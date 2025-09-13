@@ -28,6 +28,9 @@ class Ui_Form(object):
         icon = QIcon()
         icon.addFile(u"assets/frog_launcher_icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
+        Form.setStyleSheet(u"QWidget{\n"
+"	background-color: rgb(255,255,255)\n"
+"}")
         self.installLineEdit = QLineEdit(Form)
         self.installLineEdit.setObjectName(u"installLineEdit")
         self.installLineEdit.setGeometry(QRect(10, 10, 281, 31))
