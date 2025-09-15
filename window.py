@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.pushButton_run = QPushButton(self.centralwidget)
         self.pushButton_run.setObjectName(u"pushButton_run")
-        self.pushButton_run.setGeometry(QRect(760, 360, 231, 61))
+        self.pushButton_run.setGeometry(QRect(840, 360, 151, 61))
         font = QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -69,7 +69,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_folder = QPushButton(self.centralwidget)
         self.pushButton_folder.setObjectName(u"pushButton_folder")
-        self.pushButton_folder.setGeometry(QRect(620, 290, 61, 61))
+        self.pushButton_folder.setGeometry(QRect(630, 360, 61, 61))
         self.pushButton_folder.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.pushButton_folder.setIcon(icon1)
         self.pushButton_config = QPushButton(self.centralwidget)
         self.pushButton_config.setObjectName(u"pushButton_config")
-        self.pushButton_config.setGeometry(QRect(620, 80, 61, 61))
+        self.pushButton_config.setGeometry(QRect(700, 360, 61, 61))
         self.pushButton_config.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -121,7 +121,7 @@ class Ui_MainWindow(object):
         self.pushButton_config.setIcon(icon2)
         self.pushButton_reload = QPushButton(self.centralwidget)
         self.pushButton_reload.setObjectName(u"pushButton_reload")
-        self.pushButton_reload.setGeometry(QRect(620, 360, 61, 61))
+        self.pushButton_reload.setGeometry(QRect(770, 360, 61, 61))
         self.pushButton_reload.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -147,7 +147,7 @@ class Ui_MainWindow(object):
         self.pushButton_reload.setIcon(icon3)
         self.pushButton_download = QPushButton(self.centralwidget)
         self.pushButton_download.setObjectName(u"pushButton_download")
-        self.pushButton_download.setGeometry(QRect(620, 150, 61, 61))
+        self.pushButton_download.setGeometry(QRect(560, 120, 61, 100))
         self.pushButton_download.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -173,7 +173,7 @@ class Ui_MainWindow(object):
         self.pushButton_download.setIcon(icon4)
         self.pushButton_create = QPushButton(self.centralwidget)
         self.pushButton_create.setObjectName(u"pushButton_create")
-        self.pushButton_create.setGeometry(QRect(620, 10, 61, 61))
+        self.pushButton_create.setGeometry(QRect(560, 10, 61, 100))
         self.pushButton_create.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -199,7 +199,7 @@ class Ui_MainWindow(object):
         self.pushButton_create.setIcon(icon5)
         self.list_view = QListWidget(self.centralwidget)
         self.list_view.setObjectName(u"list_view")
-        self.list_view.setGeometry(QRect(690, 10, 301, 341))
+        self.list_view.setGeometry(QRect(630, 10, 361, 341))
         font1 = QFont()
         font1.setBold(True)
         self.list_view.setFont(font1)
@@ -289,7 +289,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_log = QPushButton(self.centralwidget)
         self.pushButton_log.setObjectName(u"pushButton_log")
-        self.pushButton_log.setGeometry(QRect(620, 220, 61, 61))
+        self.pushButton_log.setGeometry(QRect(560, 330, 61, 91))
         self.pushButton_log.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -315,7 +315,7 @@ class Ui_MainWindow(object):
         self.pushButton_log.setIcon(icon6)
         self.pushButton_exit = QPushButton(self.centralwidget)
         self.pushButton_exit.setObjectName(u"pushButton_exit")
-        self.pushButton_exit.setGeometry(QRect(690, 360, 61, 61))
+        self.pushButton_exit.setGeometry(QRect(560, 230, 61, 91))
         self.pushButton_exit.setStyleSheet(u"QPushButton {\n"
 "    background-color: black;\n"
 "    color: white;\n"
@@ -339,21 +339,16 @@ class Ui_MainWindow(object):
         icon7 = QIcon()
         icon7.addFile(u"assets/exit.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_exit.setIcon(icon7)
-        self.picMain_2 = QLabel(self.centralwidget)
-        self.picMain_2.setObjectName(u"picMain_2")
-        self.picMain_2.setGeometry(QRect(0, 0, 1001, 441))
-        self.picMain_2.setPixmap(QPixmap(u"assets/background.png"))
-        self.picMain_2.setScaledContents(True)
         self.labelChangelog = QLabel(self.centralwidget)
         self.labelChangelog.setObjectName(u"labelChangelog")
-        self.labelChangelog.setGeometry(QRect(10, 10, 601, 411))
+        self.labelChangelog.setGeometry(QRect(10, 10, 541, 411))
         font2 = QFont()
         font2.setPointSize(12)
         self.labelChangelog.setFont(font2)
         self.labelChangelog.setAutoFillBackground(False)
         self.labelChangelog.setStyleSheet(u"QLabel {\n"
 "	color: white;\n"
-"	background: rgba(0,0,0,191);\n"
+"	background: rgb(0,0,0);\n"
 "	border: 1px solid #333;\n"
 "	border-radius: 6px;\n"
 "	padding: 8px 16px;\n"
@@ -362,17 +357,6 @@ class Ui_MainWindow(object):
         self.labelChangelog.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.labelChangelog.setWordWrap(True)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.picMain_2.raise_()
-        self.pushButton_run.raise_()
-        self.pushButton_folder.raise_()
-        self.pushButton_config.raise_()
-        self.pushButton_reload.raise_()
-        self.pushButton_download.raise_()
-        self.pushButton_create.raise_()
-        self.list_view.raise_()
-        self.pushButton_log.raise_()
-        self.pushButton_exit.raise_()
-        self.labelChangelog.raise_()
 
         self.retranslateUi(MainWindow)
 
@@ -389,9 +373,8 @@ class Ui_MainWindow(object):
         self.pushButton_create.setText("")
         self.pushButton_log.setText("")
         self.pushButton_exit.setText("")
-        self.picMain_2.setText("")
-        self.labelChangelog.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>\u043f\u0440\u0438\u0432\u0435\u0442 <span style=\" font-weight:700;\">\u0434\u043e\u0440\u043e\u0433\u043e\u0439 \u0438\u043c\u043f\u0435\u0440\u0435\u0446!</span> \u0432 \u0441\u0432\u044f\u0437\u0438 \u0441 \u0443\u0436\u0430\u0441\u043d\u0435\u0439\u0448\u0435\u0439 \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043e\u0439 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 FLauncher, <span style=\" font-weight:700;\">\u044f mrfufl4ik</span>, \u043f\u0440\u0435\u043a\u0440\u0430\u0449\u0430\u044e \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443 \u043c\u043e\u0440\u0430\u043b\u044c\u043d\u043e \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u043e\u0439 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438. \u041d\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u0443\u0436\u0435 \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u043d\u0430 \u0435\u0433\u043e \u0437\u0430\u043c\u0435\u043d\u0443 \u0438\u043c\u044f \u0435\u0433\u043e FLauncher Beta "
-                        "(\u043f\u043e\u043a\u0430 \u0435\u0449\u0451 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u043e\u043b\u043d\u043e\u0446\u0435\u043d\u043d\u043e\u0433\u043e \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044f) \u0440\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043d\u0430 github, \u0438 \u043b\u044e\u0431\u043e\u0439 \u0436\u0435\u043b\u0430\u044e\u0449\u0438\u0439 \u043c\u043e\u0436\u0435\u0442 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438: <a href=\"https://github.com/MrFufl4ik/FLauncherBeta\"><span style=\" text-decoration: underline; color:#2980b9;\">https://github.com/mrfufl4ik/fLauncherbeta</span></a>. <span style=\" font-weight:700;\">\u0432 \u0441\u0432\u044f\u0437\u0438 \u0441 \u0442\u0435\u043c \u0447\u0442\u043e \u043d\u0430\u043f\u0438\u0441\u0430\u043d\u043e \u0432\u044b\u0448\u0435, \u044f \u043e\u0444\u0438\u0446\u0430\u043b\u044c\u043d"
-                        "\u043e \u0437\u0430\u043a\u0440\u044b\u0432\u0430\u044e \u043f\u0440\u043e\u0435\u043a\u0442 FLauncher</span>. \u043e\u043d \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442, \u0438 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0437\u0430\u0433\u043b\u0443\u0448\u043a\u043e\u0439, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u0443\u043c\u0435\u0435\u0442 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c \u043a\u0443\u0431\u044b, \u0434\u0430 \u0438 \u0432\u043f\u0440\u0438\u043d\u0446\u0435\u043f\u0435 \u0432\u0441\u0451. \u0441\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u0435!</p></body></html>", None))
+        self.labelChangelog.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>\u043f\u0440\u0438\u0432\u0435\u0442 <span style=\" font-weight:700;\">\u0434\u043e\u0440\u043e\u0433\u043e\u0439 \u0438\u043c\u043f\u0435\u0440\u0435\u0446!</span> \u0432 \u0441\u0432\u044f\u0437\u0438 \u0441 \u0443\u0436\u0430\u0441\u043d\u0435\u0439\u0448\u0435\u0439 \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043e\u0439 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 FLauncher, <span style=\" font-weight:700;\">\u044f mrfufl4ik</span>, \u043f\u0440\u0435\u043a\u0440\u0430\u0449\u0430\u044e \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443 \u043c\u043e\u0440\u0430\u043b\u044c\u043d\u043e \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u043e\u0439 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438.</p><p>\u043d\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u0443\u0436\u0435 \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u043d\u0430 \u0435\u0433\u043e \u0437\u0430\u043c\u0435\u043d\u0443 \u0438\u043c\u044f \u0435\u0433\u043e FLauncher"
+                        " Beta (\u043f\u043e\u043a\u0430 \u0435\u0449\u0451 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u043e\u043b\u043d\u043e\u0446\u0435\u043d\u043d\u043e\u0433\u043e \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044f) \u0440\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043d\u0430 github, \u0438 \u043b\u044e\u0431\u043e\u0439 \u0436\u0435\u043b\u0430\u044e\u0449\u0438\u0439 \u043c\u043e\u0436\u0435\u0442 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438: <a href=\"https://github.com/MrFufl4ik/FLauncherBeta\"><span style=\" text-decoration: underline; color:#2980b9;\">https://github.com/mrfufl4ik/fLauncherbeta</span></a>.</p><p><span style=\" font-weight:700;\">\u0432 \u0441\u0432\u044f\u0437\u0438 \u0441 \u0442\u0435\u043c \u0447\u0442\u043e \u043d\u0430\u043f\u0438\u0441\u0430\u043d\u043e \u0432\u044b\u0448\u0435, \u044f \u043e\u0444\u0438\u0446\u0430\u043b"
+                        "\u044c\u043d\u043e \u0437\u0430\u043a\u0440\u044b\u0432\u0430\u044e \u043f\u0440\u043e\u0435\u043a\u0442 FLauncher</span>. \u043e\u043d \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442, \u0438 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0437\u0430\u0433\u043b\u0443\u0448\u043a\u043e\u0439, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u0443\u043c\u0435\u0435\u0442 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c \u043a\u0443\u0431\u044b, \u0434\u0430 \u0438 \u0432\u043f\u0440\u0438\u043d\u0446\u0435\u043f\u0435 \u0432\u0441\u0451. \u0441\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u0435!</p></body></html>", None))
     # retranslateUi
 

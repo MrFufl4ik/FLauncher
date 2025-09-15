@@ -120,6 +120,8 @@ class FLauncherWindow(QMainWindow):
 
     def init_log_window(self):
         self.log_window = QtWidgets.QDialog(self)
+        self.log_window.setWindowModality(QtCore.Qt.ApplicationModal)
+        self.log_window.setModal(True)
         self.log_ui_window = Ui_Log_Form()
         self.log_ui_window.setupUi(self.log_window)
 
@@ -130,7 +132,7 @@ class FLauncherWindow(QMainWindow):
 
     def init_create_window(self):
         self.create_window = QtWidgets.QDialog(self)
-        self.create_window.setWindowModality(QtCore.Qt.ApplicationModal)  # Важно!
+        self.create_window.setWindowModality(QtCore.Qt.ApplicationModal)
         self.create_window.setModal(True)
         self.create_ui_window = Ui_Create_Form()
         self.create_ui_window.setupUi(self.create_window)
