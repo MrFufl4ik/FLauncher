@@ -38,6 +38,9 @@ class Ui_MainWindow(object):
         MainWindow.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"QWidget {\n"
+"	background-color: white\n"
+"}")
         self.pushButton_run = QPushButton(self.centralwidget)
         self.pushButton_run.setObjectName(u"pushButton_run")
         self.pushButton_run.setGeometry(QRect(840, 360, 151, 61))

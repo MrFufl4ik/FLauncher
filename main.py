@@ -283,11 +283,20 @@ class FLauncherWindow(QMainWindow):
             )
 
     def read_log(self):
-        with open(consts.LOG_FILE_NAME) as f:
-            lines = f.readlines()
-            for line in lines:
-                self.log_ui_window.logTextEdit.append(line.strip())
-
+        try:
+            with open(consts.LOG_FILE_NAME, 'r', buffering=8192) as f:  # Увеличенный буфер
+                lines = []
+                for line in f:
+                    lines.append(line.strip())
+                    # Batch-обработка каждые 100 строк
+                    if len(lines) >= 100:
+                        text = '\n'.join(lines)
+                        self.log_ui_window.logTextEdit.append(text)
+                        lines = []
+                        QApplication.processEvents()  # Обновление UI
+                if lines:
+                    self.log_ui_window.logTextEdit.append('\n'.join(lines))
+        except Exception: pass
     def update_version_loader(self):
         if self.settings_ui_window.comboBoxLoader.currentText() is not None:
             loader = self.settings_ui_window.comboBoxLoader.currentText().lower()

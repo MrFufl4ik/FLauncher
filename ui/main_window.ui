@@ -45,6 +45,11 @@
    <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+	background-color: white
+}</string>
+   </property>
    <widget class="QPushButton" name="pushButton_run">
     <property name="geometry">
      <rect>
