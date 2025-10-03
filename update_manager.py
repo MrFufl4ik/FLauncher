@@ -5,6 +5,7 @@ import os
 import config_manager
 import pathlib
 import py7zr
+import shutil
 
 from ftplib import FTP
 
@@ -69,12 +70,16 @@ def post_update(modpack_id: str):
     modpack_path = f"{current_directory}/{consts.MODPACKS_FOLDER_NAME}/{modpack_id}"
     config = config_manager.upd_config_get(modpack_path)
     if config is not None:
-        list_file_for_delete = config.get("files_delete", None)
+        entry_list_for_delete = config.get("files_delete", None)
         set_config_data = config.get("config_set", None)
-        if list_file_for_delete is not None:
-            for file in list_file_for_delete:
-                file_path = f"{modpack_path}/{file}"
-                if os.path.exists(file_path): os.remove(file_path)
+        if entry_list_for_delete is not None:
+            for entry in entry_list_for_delete:
+                entry_path = f"{modpack_path}/{entry}"
+                if os.path.exists(entry_path):
+                    if os.path.isfile(entry_path):
+                        os.remove(entry_path)
+                    elif os.path.isdir(entry_path):
+                        shutil.rmtree(entry_path)
             print("Удаленны бесполезные файлы...")
         if set_config_data is not None:
             config_manager.mc_config_set(modpack_path, set_config_data)
